@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{apacite}
+
+\title{interrupciones}
+\author{Juan Pablo Davila Bedoya }
+\date{\today}    
+
+\begin{document}
+
+\maketitle
+
+
+una interrupción es básicamente un mecanismo que surge como consecuencia de un evento externo al que el procesador esta ejecutando en un momento especifico (t), es decir, cuando una petición asociada a alguna ejecución de mayor rango de importancia de la que se esta ejecutando en el tiempo (t) llega al procesador, este interrumpe por un momento breve el proceso que estaba ejecutando para darle una prioridad a la petición nueva, cuando la termina continua con la ejecución que llevaba antes de la petición (en t).
+cabe aclarar que cada “petición” tiene un rango de importancia, si la petición entrante al procesador es de un rango de importancia menor o igual, entonces no existirá una interrupción.\cite{Interrupcion}
+
+
+Pensar en una comercialización de tecnologías asociadas a las computadoras para todo tipo de personas, seria casi imposible si no contásemos con las interrupciones a nivel de procesadores, esto debido a que las computadoras solo podrían ejecutar un solo proceso, y no varios al mismo tiempo como estamos acostumbrados; por lo cual el proceso de cambiar de ejecuciones de códigos en las computadoras sera manual, por tanto a las personas del “común” se nos complicaría mucho usar una computadora; bueno, en realidad las computadoras solo pueden realizar una sola ejecución a la vez, solo que las interrupciones de los procesadores son tan increíblemente rápidas que dan la ilusión de que puede hacer varias cosas al mismo tiempo, velocidad que nunca se conseguiría haciendo este proceso manualmente, en conclusión, no podríamos escuchar música mientras escribimos un ensayo de interrupciones.
+Por lo anteriormente escrito, las interrupciones fueron casi obligatorias en el momento en el que se pensó en vender computadoras a personas “del común”.
+
+
+Podemos clasificar las interrupciones en tres tipos, interrupciones por software, interrupciones por hardware y por ultimo excepciones.\cite{tipos}
+
+interrupciones por software : Estas interrupciones también son nombradas como “llamadas al sistema”, estas interrupciones son producidas por “la ejecución de instrucciones de la CPU”. Estas interrupciones aparecen por ejemplo en el momento en el que se esta ejecutando un código, en alguna linea de este código es necesario ingresar a un archivo te texto plano para seguir con la ejecución, y este archivo se encuentra alojado en el disco duro, por lo cual la ejecución de este código se interrumpe para llamar al sistema operativo y que este le de una respuesta asociada al archivo de texto plano que necesita el código para seguir con su ejecución, una vez exista una respuesta del sistema operativo la ejecución del código continua.\cite{def}
+
+
+interrupciones por hardware : estas interrupciones pueden subdividirse en dos tipos, internas y externas.
+Las interrupciones por hardware internas son producidas por la CPU, y entre las posibles causas que producen estas interrupciones están : división por cero, desbordamiento, instrucción ilegal, dirección ilegal, logaritmo de cero, raíz cuadrada negativa, etc.\cite{hardware}
+El ultimo tipo de interrupciones por hardware corresponde a las interrupciones externas, y estas excepciones son producidas por dispositivos externos al procesador y se pueden subdividir en dos tipos, vectorizadas y no vectorizadas.
+En total hay 256 posibles interrupciones de hardware y si bien algunas pueden presentarse al mismo tiempo como es el caso de el teclado, se imposibilita que las 256 posibles interrupciones por hardware se den al mismo tiempo.
+
+
+Las implementaciones a las interrupciones por hardware que probablemente mas nos incumbe son las interrupciones asociadas al arduino, las cuales se pueden clasificar en 4 tipos fundamentales, detección por estado bajo o LOW,  detección por cambio de estado o CHANGE,  detección por flanco de subida o RISING y detección por flanco de bajada o FALLING.
+-Detección por estado bajo o LOW: este estado ejecutara una interrupción cada que se llegue detectar una señal que este en estado bajo (LOW).
+-Detección por cambio de estado o CHANGE: esta interrupción se genera cunado el estado de la señal cambia, ya sea de alto a bajo o al contrario.
+-Detección por flanco de subida o RISING: esta interrupción es generada por un cambio en el estado de la señal, este cambio debe ser estrictamente de estado bajo a estado alto.
+-Detección por flanco de bajada o FALLING: como es de esperar, cada ves que el estado de la señal pasa de estar en estado alto a estado bajo, se genera este tipo de interrupción.\cite{tipos2}
+
+
+Las interrupciones por software son utilizadas tanto por el sistema operativo como por los programas que este ejecutando el usuario, por ejemplo en un programa en ejecución al llamar la función “int” , “float” o al código contener una división por cero se genera una interrupción, esto deja claro que es fundamental el lenguaje en el que este escrito el código del programa; en el caso de el sistema operativo, las interrupciones del teclado que van dirigidas a los periféricos depende del sistema operativo, pues hay ciertas combinaciones de teclas que podrían generar interrupciones en Windows y no en Linux, por ejemplo en Windows la combinación de teclas windows+ R abre la terminal de dicho sistema operativo provocando una interrupción para ejecutar esta orden, mientras que en Linux esta combinación de teclas no produce nada.\cite{tipos}
+
+\cite{CPU}
+
+\bibliographystyle{apacite}
+\bibliography{bibliografia.bib}
+
+\end{document}
